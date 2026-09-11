@@ -1,0 +1,160 @@
+/* ==========================================================================
+   LABORATORIO 2 - Hoja de estilos compartida del equipo
+   Ubicación sugerida: src/css/estilo.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (paleta de colores y tipografía acordadas por el equipo)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colores */
+  --color-primario: #2c3e91;
+  --color-secundario: #17a2b8;
+  --color-fondo: #f5f6fa;
+  --color-texto: #222222;
+  --color-tarjeta-fondo: #ffffff;
+  --color-borde: #e0e0e0;
+
+  /* Tipografía */
+  --fuente-titulo: 'Poppins', sans-serif;
+  --fuente-texto: 'Inter', sans-serif;
+
+  /* Espaciado (todo en unidades relativas, no píxeles) */
+  --espaciado-chico: 1rem;
+  --espaciado-mediano: 2rem;
+  --espaciado-grande: 3rem;
+  --radio-borde: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET BÁSICO
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  width: 100%;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulo);
+  color: var(--color-primario);
+}
+
+/* --------------------------------------------------------------------------
+   3. ESTRUCTURA GENERAL DEL SITIO (index.html) - usando Grid
+   -------------------------------------------------------------------------- */
+.encabezado-sitio {
+  width: 100%;
+  padding: var(--espaciado-mediano) 5%;
+  background-color: var(--color-primario);
+  text-align: center;
+}
+
+.encabezado-sitio h1 {
+  color: #ffffff;
+}
+
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaciado-mediano);
+  width: 90%;
+  max-width: 1200px;
+  margin: var(--espaciado-grande) auto;
+}
+
+.tarjeta {
+  background-color: var(--color-tarjeta-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 5%;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tarjeta:hover {
+  transform: translateY(-0.3rem);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radio-borde);
+}
+
+.tarjeta a {
+  display: inline-block;
+  margin-top: var(--espaciado-chico);
+  color: var(--color-secundario);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   4. ESTILOS DE CADA PÁGINA INDIVIDUAL (modelo de caja + Flexbox)
+   -------------------------------------------------------------------------- */
+header {
+  width: 100%;
+  padding: var(--espaciado-mediano) 5%;
+  background-color: var(--color-secundario);
+  color: #ffffff;
+}
+
+header .contacto {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-mediano);
+  width: 90%;
+  max-width: 900px;
+  margin: var(--espaciado-mediano) auto;
+}
+
+main section {
+  background-color: var(--color-tarjeta-fondo);
+  border: 1px solid var(--color-borde);
+  border-left: 0.3rem solid var(--color-primario);
+  border-radius: var(--radio-borde);
+  padding: var(--espaciado-mediano);
+}
+
+main section h2 {
+  margin-bottom: var(--espaciado-chico);
+}
+
+/* --------------------------------------------------------------------------
+   5. DISEÑO RESPONSIVO - MEDIA QUERY (pantallas angostas)
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .contenedor-tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    width: 95%;
+  }
+
+  header, .encabezado-sitio {
+    padding: var(--espaciado-chico) 5%;
+  }
+}
+
+/* ===== Sección personalizada - Matías ===== */
+.perfil-matias {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--espaciado-mediano) 0;
+}
