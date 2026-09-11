@@ -6,3 +6,18 @@
   --font-title: 'Poppins', sans-serif;
   --font-body: system-ui, sans-serif;
 }
+#javier.project-card {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+#javier .card-title {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+}
+
+#javier .card-tech-list li {
+  color: var(--color-accent);
+  font-weight: 600;
+}
