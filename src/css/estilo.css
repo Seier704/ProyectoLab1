@@ -6,3 +6,52 @@
   --font-title: 'Poppins', sans-serif;
   --font-body: system-ui, sans-serif;
 }
+#javier.project-card {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+#javier .card-title {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+}
+
+#javier .card-tech-list li {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+#javier.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 30%;
+}
+
+#javier .card-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2%;
+}
+#javier.project-card {
+  padding: 5% 4%;
+  margin: 2% auto;
+  border: 0.1rem solid var(--color-primary);
+  border-radius: 1rem;
+}
+#javier .card-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#javier .card-description {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+#javier .card-tech-list {
+  margin-top: 4%;
+  padding: 0;
+  list-style: none;
+}
