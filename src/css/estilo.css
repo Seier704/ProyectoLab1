@@ -173,3 +173,16 @@ main section h2 {
 .card-header {
     border-bottom: 2px solid var(--secondary-color, #F2A541);
 }
+/* ==========================================
+   Estructura Flexbox
+   ========================================== */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+}
