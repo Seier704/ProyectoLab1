@@ -21,3 +21,17 @@
   color: var(--color-accent);
   font-weight: 600;
 }
+#javier.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 30%;
+}
+
+#javier .card-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2%;
+}
