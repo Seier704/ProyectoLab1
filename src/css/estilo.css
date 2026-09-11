@@ -35,3 +35,9 @@
   justify-content: center;
   gap: 2%;
 }
+#javier.project-card {
+  padding: 5% 4%;
+  margin: 2% auto;
+  border: 0.1rem solid var(--color-primary);
+  border-radius: 1rem;
+}
