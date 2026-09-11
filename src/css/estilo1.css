@@ -1,0 +1,13 @@
+.contenedor_curriculum {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  background-color: #f4f6f8; /* color suave, gris azulado */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo_principal { grid-column: span 12; text-align: center; }
+.mitad { grid-column: span 6; }
+.tercio { grid-column: span 4; }
