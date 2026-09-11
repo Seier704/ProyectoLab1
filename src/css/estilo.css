@@ -158,3 +158,18 @@ main section h2 {
   margin: 0 auto;
   padding: var(--espaciado-mediano) 0;
 }
+/* ==========================================
+   Sección de Matías Olivares - Colores Base
+   ========================================== */
+.matias-card {
+    background-color: var(--bg-card, #F7F7F7);
+    color: var(--text-color, #222222);
+}
+
+.author-name, .info-block h2 {
+    color: var(--primary-color, #1B3A4B);
+}
+
+.card-header {
+    border-bottom: 2px solid var(--secondary-color, #F2A541);
+}
