@@ -41,3 +41,12 @@
   border: 0.1rem solid var(--color-primary);
   border-radius: 1rem;
 }
+#javier .card-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#javier .card-description {
+  font-size: 1rem;
+  line-height: 1.4;
+}
