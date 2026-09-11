@@ -1,0 +1,8 @@
+:root {
+  --color-bg: #F7F7F7;
+  --color-primary: #1B3A4B;
+  --color-accent: #F2A541;
+  --color-text: #222222;
+  --font-title: 'Poppins', sans-serif;
+  --font-body: system-ui, sans-serif;
+}
