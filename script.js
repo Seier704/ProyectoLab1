@@ -26,4 +26,18 @@ const tarjetaJavier = document.querySelector('#javier');
 
 botonDestacar.addEventListener('click', () => {
   tarjetaJavier.classList.toggle('destacado');
+const botonSorpresa = document.querySelector('#boton-sorpresa');
+const mensajeSorpresa = document.querySelector('#mensaje-sorpresa');
+
+const frases = [
+  "Wena wena waton mysterion! 🚀",
+  "Ch!palo alexitico ",
+  "Nose que mas poner como mensaje",
+  
+
+];
+
+botonSorpresa.addEventListener('click', () => {
+  const indiceAleatorio = Math.floor(Math.random() * frases.length);
+  mensajeSorpresa.textContent = frases[indiceAleatorio];
 });
