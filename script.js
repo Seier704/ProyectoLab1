@@ -20,3 +20,10 @@ botonJavier.addEventListener('click', () => {
   const abierto = !extraJavier.classList.contains('oculto');
   botonJavier.textContent = abierto ? '🔼 Ver menos' : '🔽 Ver más';
 });
+
+const botonDestacar = document.querySelector('#javier-destacar');
+const tarjetaJavier = document.querySelector('#javier');
+
+botonDestacar.addEventListener('click', () => {
+  tarjetaJavier.classList.toggle('destacado');
+});
