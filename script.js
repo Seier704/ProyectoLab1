@@ -8,5 +8,11 @@ const botonDetalles = document.querySelector('#btn-detalles-tuNombre');
 const infoExtra = document.querySelector('#info-extra-tuNombre');
 
 botonDetalles.addEventListener('click', () => {
-  // La lógica de modificación del DOM irá en el siguiente commit
+  if (infoExtra.style.display === 'none') {
+    infoExtra.style.display = 'block';
+    botonDetalles.textContent = 'Ver menos detalles';
+  } else {
+    infoExtra.style.display = 'none';
+    botonDetalles.textContent = 'Ver más detalles';
+  }
 });
