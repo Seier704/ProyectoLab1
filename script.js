@@ -14,3 +14,8 @@ botonJavier.addEventListener('click', () => {
 botonJavier.addEventListener('click', () => {
   extraJavier.classList.toggle('oculto');
 });
+
+botonJavier.addEventListener('click', () => {
+  extraJavier.classList.toggle('oculto');
+  botonJavier.textContent = extraJavier.classList.contains('oculto') ? 'Ver más' : 'Ver menos';
+});
