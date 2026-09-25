@@ -7,5 +7,7 @@ botonModoOscuro.addEventListener('click', () => {
 const botonJavier = document.querySelector('#javier-toggle');
 const extraJavier = document.querySelector('#javier-extra');
 
-
+botonJavier.addEventListener('click', () => {
+  console.log('clic detectado');
+});
 
