@@ -236,4 +236,92 @@ main section h2 {
     font-family: system-ui, sans-serif;
     margin: 2px 0;
     line-height: 1.4;
+:root {
+  --color-bg: #F7F7F7;
+  --color-primary: #1B3A4B;
+  --color-accent: #F2A541;
+  --color-text: #222222;
+  --font-title: 'Poppins', sans-serif;
+  --font-body: system-ui, sans-serif;
+}
+#javier.project-card {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+#javier .card-title {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+}
+
+#javier .card-tech-list li {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+#javier.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 30%;
+}
+
+#javier .card-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2%;
+}
+#javier.project-card {
+  padding: 5% 4%;
+  margin: 2% auto;
+  border: 0.1rem solid var(--color-primary);
+  border-radius: 1rem;
+}
+#javier .card-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#javier .card-description {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+#javier .card-tech-list {
+  margin-top: 4%;
+  padding: 0;
+  list-style: none;
+}
+
+
+body.modo-oscuro {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+#boton-sorpresa {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#mensaje-sorpresa {
+  position: fixed;
+  top: 60px;
+  left: 16px;
+  z-index: 10;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  max-width: 250px;
 }
