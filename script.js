@@ -11,3 +11,6 @@ botonJavier.addEventListener('click', () => {
   console.log('clic detectado');
 });
 
+botonJavier.addEventListener('click', () => {
+  extraJavier.classList.toggle('oculto');
+});
