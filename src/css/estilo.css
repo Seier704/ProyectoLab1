@@ -299,6 +299,29 @@ body.modo-oscuro {
   background-color: #121212;
   color: #ffffff;
 }
+#javier.project-card {
+  border-radius: 2rem;
+  background: #E8F0E5; /* verde pastel, distinto al azul de Fabián */
+  position: relative;
+  padding-bottom: 2.5rem; /* deja espacio para la etiqueta de esquina */
+}
+
+#javier .etiqueta_esquina {
+  position: absolute;
+  bottom: 0.8rem;
+  right: 1rem;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+#javier-destacar {
+  margin-top: 0.5rem;
+}
+
+#javier.project-card.destacado {
+  border: 0.15rem solid var(--color-accent);
+  box-shadow: 0 0 0.8rem rgba(242, 165, 65, 0.4);
 
 #boton-sorpresa {
   position: fixed;

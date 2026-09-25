@@ -36,3 +36,15 @@
   font-style: italic;
   color: #4a6b8a;
 }
+
+
+#javier-extra {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+#javier-extra:not(.oculto) {
+  max-height: 100px;
+  opacity: 1;
+}
