@@ -6,3 +6,7 @@ botonModoOscuro.addEventListener('click', () => {
 
 const botonDetalles = document.querySelector('#btn-detalles-tuNombre');
 const infoExtra = document.querySelector('#info-extra-tuNombre');
+
+botonDetalles.addEventListener('click', () => {
+  // La lógica de modificación del DOM irá en el siguiente commit
+});
