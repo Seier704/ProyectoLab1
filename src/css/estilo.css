@@ -322,7 +322,7 @@ body.modo-oscuro {
 #javier.project-card.destacado {
   border: 0.15rem solid var(--color-accent);
   box-shadow: 0 0 0.8rem rgba(242, 165, 65, 0.4);
-
+}
 #boton-sorpresa {
   position: fixed;
   top: 16px;
