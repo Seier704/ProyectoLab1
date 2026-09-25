@@ -236,6 +236,9 @@ main section h2 {
     font-family: system-ui, sans-serif;
     margin: 2px 0;
     line-height: 1.4;
+}
+
+/* ===== Sección personalizada - Javier ===== */
 :root {
   --color-bg: #F7F7F7;
   --color-primary: #1B3A4B;
@@ -294,11 +297,11 @@ main section h2 {
   list-style: none;
 }
 
-
 body.modo-oscuro {
   background-color: #121212;
   color: #ffffff;
 }
+
 #javier.project-card {
   border-radius: 2rem;
   background: #E8F0E5; /* verde pastel, distinto al azul de Fabián */
@@ -323,6 +326,8 @@ body.modo-oscuro {
   border: 0.15rem solid var(--color-accent);
   box-shadow: 0 0 0.8rem rgba(242, 165, 65, 0.4);
 }
+
+/* ===== Interactividad - Laboratorio 3 ===== */
 #boton-sorpresa {
   position: fixed;
   top: 16px;
