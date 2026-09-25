@@ -26,6 +26,8 @@ const tarjetaJavier = document.querySelector('#javier');
 
 botonDestacar.addEventListener('click', () => {
   tarjetaJavier.classList.toggle('destacado');
+});
+
 const botonDetalles = document.querySelector('#btn-detalles-tuNombre');
 const infoExtra = document.querySelector('#info-extra-tuNombre');
 
@@ -37,6 +39,8 @@ botonDetalles.addEventListener('click', () => {
     infoExtra.style.display = 'none';
     botonDetalles.textContent = 'Ver más detalles';
   }
+});
+
 const botonSorpresa = document.querySelector('#boton-sorpresa');
 const mensajeSorpresa = document.querySelector('#mensaje-sorpresa');
 
@@ -44,8 +48,6 @@ const frases = [
   "Wena wena waton mysterion! 🚀",
   "Ch!palo alexitico ",
   "Nose que mas poner como mensaje",
-  
-
 ];
 
 botonSorpresa.addEventListener('click', () => {
