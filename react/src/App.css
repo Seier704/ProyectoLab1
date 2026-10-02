@@ -788,6 +788,103 @@ input:focus-visible {
   color: var(--forest);
 }
 
+.fabian-page {
+  padding: 2rem 0 5rem;
+}
+
+.fabian-hero {
+  padding: 3.5rem clamp(2rem, 7vw, 7rem);
+  background: var(--forest-deep);
+  color: var(--paper);
+}
+
+.fabian-hero > .eyebrow {
+  color: #aec0ad;
+}
+
+.fabian-hero-content {
+  display: grid;
+  min-height: 20rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.fabian-introduction h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.fabian-field {
+  margin: 1rem 0 0;
+  color: #d5a17b;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+
+.fabian-summary {
+  max-width: 30rem;
+  margin: 1rem 0 1.5rem;
+  color: #c5d0c5;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.fabian-monogram {
+  display: grid;
+  width: 12rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #62756a;
+  color: #e8b18c;
+  font-family: var(--serif);
+  font-size: 4rem;
+}
+
+.fabian-experience {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 1.2fr);
+  gap: 3rem;
+  padding: 3rem 0 0;
+}
+
+.fabian-experience h2 {
+  max-width: 17ch;
+  margin: 0.65rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.fabian-experience-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fabian-experience-list li {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+
+.fabian-experience-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.fabian-experience-index {
+  color: var(--clay);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
 .site-footer {
   display: flex;
   min-height: 4rem;
