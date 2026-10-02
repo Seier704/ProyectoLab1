@@ -8,12 +8,13 @@ function LoginPage() {
   const { signIn } = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
-  const returnTo = (location.state as { from?: string } | null)?.from ?? '/perfil'
+  const returnTo = (location.state as { from?: string } | null)?.from
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    signIn(name.trim(), email.trim())
-    navigate(returnTo, { replace: true })
+    const cleanName = name.trim()
+    signIn(cleanName, email.trim())
+    navigate(returnTo ?? `/perfil/${encodeURIComponent(cleanName)}`, { replace: true })
   }
 
   return (

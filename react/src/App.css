@@ -742,6 +742,14 @@ input:focus-visible {
   background: #708d66;
 }
 
+.profile-url-warning {
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  border-left: 3px solid var(--clay);
+  background: var(--surface);
+  color: var(--ink);
+}
+
 .profile-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
