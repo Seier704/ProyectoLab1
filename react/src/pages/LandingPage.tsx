@@ -5,7 +5,6 @@ const profiles = [
     initials: 'FS',
     name: 'Fabián Silva',
     field: 'Experiencia en terreno',
-    href: '/equipo/fabian-silva',
     note: 'Prácticas en minería y soporte técnico.',
     tone: 'moss',
   },
@@ -19,6 +18,7 @@ const profiles = [
   {
     initials: 'MO',
     name: 'Matías Olivares',
+    href: '/equipo/matias-olivares',
     field: 'Computación e informática',
     note: 'Formación en Universidad Central de Chile.',
     tone: 'blue',

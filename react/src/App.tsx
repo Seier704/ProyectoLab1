@@ -3,7 +3,7 @@ import { useAuth } from './useAuth'
 import LandingPage from './pages/LandingPage'
 import LoginPage from './pages/LoginPage'
 import ProfilePage from './pages/ProfilePage'
-import FabianProfilePage from './pages/FabianProfilePage'
+import MatiasProfilePage from './pages/MatiasProfilePage'
 import './App.css'
 
 function SiteHeader() {
@@ -62,7 +62,7 @@ function App() {
         <Route element={<LandingPage />} path="/" />
         <Route element={<LoginPage />} path="/login" />
         <Route element={<ProtectedProfile />} path="/perfil" />
-        <Route element={<FabianProfilePage />} path="/equipo/fabian-silva" />
+        <Route element={<MatiasProfilePage />} path="/equipo/matias-olivares" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Routes>
       <SiteFooter />
