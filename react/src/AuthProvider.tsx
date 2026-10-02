@@ -6,7 +6,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const value: AuthContextValue = {
     user,
-    signIn: (name, email) => setUser({ name, email }),
+    signIn: (name, email, username) => setUser({ name, email, username }),
     signOut: () => setUser(null),
   }
 

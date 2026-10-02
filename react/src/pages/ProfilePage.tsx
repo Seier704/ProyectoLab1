@@ -1,14 +1,41 @@
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useAuth } from '../useAuth'
+import { AuthContext } from '../AuthContext'
 import JavierCard from './JavierCard'
 
 function ProfilePage() {
-  const { user } = useAuth()
-  const { usuario } = useParams<{ usuario: string }>()
+  const auth = useContext(AuthContext)
+  const user = auth?.user
+  const { username } = useParams<{ username: string }>()
+  const [likes, setLikes] = useState<number>(0)
+  const loggedUsername = user?.username.trim().toLocaleLowerCase('es')
+  const loggedName = user?.name.trim().toLocaleLowerCase('es')
+  const matchesUrl = Boolean(username && loggedUsername && username.trim().toLocaleLowerCase('es') === loggedUsername)
+  const ownerFromUsername = loggedUsername === 'fabian' || loggedUsername === 'fabian-silva'
+    ? 'fabian'
+    : loggedUsername === 'javier' || loggedUsername === 'javier-carrasco'
+      ? 'javier'
+      : null
+  const ownerFromName = loggedName === 'fabián silva'
+    ? 'fabian'
+    : loggedName === 'javier carrasco'
+      ? 'javier'
+      : null
+  const profileOwner = ownerFromUsername ?? ownerFromName
+  const ownsFabianProfile = matchesUrl && profileOwner === 'fabian'
+  const ownsJavierProfile = matchesUrl && profileOwner === 'javier'
+
+  useEffect(() => {
+    if (!username || !ownsFabianProfile) return
+
+    window.localStorage.setItem(
+      'perfil:fabian:ultimaVisita',
+      new Date().toISOString(),
+    )
+  }, [ownsFabianProfile, username])
 
   if (!user) return null
 
-  const matchesUrl = usuario?.trim().toLocaleLowerCase('es') === user.name.trim().toLocaleLowerCase('es')
   const initials = user.name
     .split(' ')
     .filter(Boolean)
@@ -57,7 +84,26 @@ function ProfilePage() {
           </div>
         </section>
       </div>
-      <JavierCard />
+      {ownsFabianProfile && (
+        <article className="profile-panel member-card" aria-labelledby="fabian-card-title">
+          <p className="eyebrow">03 / TARJETA PERSONAL</p>
+          <h3 id="fabian-card-title">Fabián Silva</h3>
+          <p>En el Laboratorio 1 trabajé en el portafolio colaborativo de currículums del equipo.</p>
+          <p className="member-card-skills">Aporte: estructura del perfil, presentación de experiencia y datos personales.</p>
+          <p className="member-card-skills">Tecnologías: React, TypeScript y CSS.</p>
+          <p className="member-card-likes">Me gusta: {likes}</p>
+          <button
+            aria-label={`Me gusta: ${likes}`}
+            aria-pressed={likes > 0}
+            className="button button-quiet member-card-button"
+            onClick={() => setLikes((currentLikes) => currentLikes + 1)}
+            type="button"
+          >
+            Dar me gusta
+          </button>
+        </article>
+      )}
+      {ownsJavierProfile && <JavierCard />}
     </main>
   )
 }

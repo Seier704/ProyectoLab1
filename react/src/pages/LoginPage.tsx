@@ -5,6 +5,7 @@ import { useAuth } from '../useAuth'
 function LoginPage() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const { signIn } = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
@@ -13,8 +14,10 @@ function LoginPage() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const cleanName = name.trim()
-    signIn(cleanName, email.trim())
-    navigate(returnTo ?? `/perfil/${encodeURIComponent(cleanName)}`, { replace: true })
+    const cleanUsername = username.trim().toLowerCase()
+    const ownProfilePath = `/perfil/${encodeURIComponent(cleanUsername)}`
+    signIn(cleanName, email.trim(), cleanUsername)
+    navigate(returnTo === ownProfilePath ? returnTo : ownProfilePath, { replace: true })
   }
 
   return (
@@ -41,6 +44,19 @@ function LoginPage() {
             placeholder="Tu nombre"
             required
             value={name}
+          />
+
+          <label htmlFor="login-username">Usuario</label>
+          <input
+            autoCapitalize="none"
+            autoComplete="username"
+            id="login-username"
+            name="username"
+            onChange={(event) => setUsername(event.target.value.toLowerCase().replace(/[^a-z0-9-]/g, ''))}
+            pattern="[a-z0-9]+(?:-[a-z0-9]+)*"
+            placeholder="fabian"
+            required
+            value={username}
           />
 
           <label htmlFor="login-email">Correo electrónico</label>
