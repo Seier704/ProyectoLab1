@@ -1,40 +1,56 @@
-const alternarDetalle = (boton, detalle, textoAbierto, textoCerrado) => {
-  boton.addEventListener('click', () => {
-    detalle.hidden = !detalle.hidden;
-    boton.textContent = detalle.hidden ? textoCerrado : textoAbierto;
-    boton.setAttribute('aria-expanded', String(!detalle.hidden));
-  });
-};
+const botonModoOscuro = document.querySelector('#modo-oscuro');
 
-document.querySelector('#modo-oscuro').addEventListener('click', () => {
+botonModoOscuro.addEventListener('click', () => {
   document.body.classList.toggle('modo-oscuro');
 });
 
-alternarDetalle(
-  document.querySelector('#javier-toggle'),
-  document.querySelector('#javier-extra'),
-  'Ver menos',
-  'Ver más',
-);
+const botonJavier = document.querySelector('#javier-toggle');
+const extraJavier = document.querySelector('#javier-extra');
 
-document.querySelector('#javier-destacar').addEventListener('click', () => {
-  document.querySelector('#javier').classList.toggle('destacado');
+botonJavier.addEventListener('click', () => {
+  extraJavier.classList.toggle('oculto');
+  const abierto = !extraJavier.classList.contains('oculto');
+  botonJavier.textContent = abierto ? '🔼 Ver menos' : '🔽 Ver más';
+  botonJavier.setAttribute('aria-expanded', String(abierto));
 });
 
-alternarDetalle(
-  document.querySelector('#btn-detalles-tuNombre'),
-  document.querySelector('#info-extra-tuNombre'),
-  'Ver menos detalles',
-  'Ver más detalles',
-);
+const botonDestacar = document.querySelector('#javier-destacar');
+const tarjetaJavier = document.querySelector('#javier');
 
-const frasesSorpresa = [
-  '¡Wena wena, watón Mysterion! 🚀',
-  '¡Chípalo, Alexítico!',
-  'No sé qué más poner como mensaje.',
+botonDestacar.addEventListener('click', () => {
+  tarjetaJavier.classList.toggle('destacado');
+});
+
+const botonDetalles = document.querySelector('#btn-detalles-tuNombre');
+const infoExtra = document.querySelector('#info-extra-tuNombre');
+
+botonDetalles.addEventListener('click', () => {
+  infoExtra.hidden = !infoExtra.hidden;
+  const abierto = !infoExtra.hidden;
+  botonDetalles.textContent = abierto ? 'Ver menos detalles' : 'Ver más detalles';
+  botonDetalles.setAttribute('aria-expanded', String(abierto));
+});
+
+const botonSorpresa = document.querySelector('#boton-sorpresa');
+const mensajeSorpresa = document.querySelector('#mensaje-sorpresa');
+
+const frases = [
+  "Wena wena waton mysterion! 🚀",
+  "Ch!palo alexitico ",
+  "Nose que mas poner como mensaje",
 ];
 
-document.querySelector('#boton-sorpresa').addEventListener('click', () => {
-  const indice = Math.floor(Math.random() * frasesSorpresa.length);
-  document.querySelector('#mensaje-sorpresa').textContent = frasesSorpresa[indice];
+botonSorpresa.addEventListener('click', () => {
+  const indiceAleatorio = Math.floor(Math.random() * frases.length);
+  mensajeSorpresa.textContent = frases[indiceAleatorio];
 });
+
+const actualizarFondo = () => {
+  const recorrido = document.documentElement.scrollHeight - window.innerHeight;
+  const progreso = recorrido > 0 ? Math.min(window.scrollY / recorrido, 1) : 0;
+  document.documentElement.style.setProperty('--scroll-progress', `${progreso * 100}%`);
+};
+
+window.addEventListener('scroll', actualizarFondo, { passive: true });
+window.addEventListener('resize', actualizarFondo);
+actualizarFondo();

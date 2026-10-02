@@ -1,62 +1,120 @@
-<!--  --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="src/css/estilo1.css">
-<link rel="stylesheet" href="src/css/estilo.css">
-<script src="script.js" defer></script>
-
+    <meta name="theme-color" content="#eef3e9">
+    <title>Currículums del equipo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/estilo.css">
+    <link rel="stylesheet" href="src/css/estilo1.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-  <button id="modo-oscuro">🌙 Modo oscuro</button>
-  <button id="boton-sorpresa">🎲 Sorpréndeme</button>
-  <p id="mensaje-sorpresa"></p>
-    <div class="cards-container">
+<body class="resume-page">
+  <div class="page-shell">
+    <header class="masthead">
+      <div class="logo-slot" aria-hidden="true"></div>
+      <div class="masthead-copy">
+        <p class="eyebrow">PORTAFOLIO / EQUIPO</p>
+        <h1>Personas, formación y experiencia</h1>
+        <p class="masthead-description">Tres recorridos profesionales, presentados en una sola vista.</p>
+      </div>
+      <div class="toolbar" aria-label="Controles de la página">
+        <button id="modo-oscuro" type="button">◐ Tema</button>
+        <button id="boton-sorpresa" type="button">✳ Sorpresa</button>
+        <p id="mensaje-sorpresa" role="status" aria-live="polite"></p>
+      </div>
+    </header>
 
-<div class="contenedor_curriculum">
+    <main>
+      <div class="section-heading">
+        <p class="eyebrow">01 — 03 / PERFILES</p>
+        <h2>Currículums</h2>
+      </div>
 
-  <div class="caja_datos">
-    <h1 class="titulo_principal">Curriculum Vitae</h1>
-    <p class="mitad">Fabian Silva</p>
-    <p class="mitad">Rut: 20.414.858-9</p>
-    <p class="mitad">correo: fsilvat2000@gmail.com</p>
-    <span class="etiqueta_esquina">Datos personales</span>
+      <section class="resume-grid" aria-label="Currículums del equipo">
+        <article class="resume-card resume-card--fabian">
+          <div class="card-topline"><span>PERFIL 01</span><span class="card-mark">FS</span></div>
+          <h3>Fabián Silva</h3>
+          <p class="card-intro">Experiencia práctica</p>
+
+          <section class="card-section">
+            <h4>Datos personales</h4>
+            <dl class="detail-list">
+              <div><dt>RUT</dt><dd>20.414.858-9</dd></div>
+              <div><dt>Correo</dt><dd><a href="mailto:fsilvat2000@gmail.com">fsilvat2000@gmail.com</a></dd></div>
+            </dl>
+          </section>
+
+          <section class="card-section">
+            <h4>Experiencia</h4>
+            <ul class="timeline-list">
+              <li>Práctica en Minera Codelco</li>
+              <li>Práctica en Empresa COLSAN LTDA</li>
+            </ul>
+          </section>
+          <p class="card-index">01 <span>/ 03</span></p>
+        </article>
+
+        <article class="resume-card resume-card--javier" id="javier">
+          <div class="card-topline"><span>PERFIL 02</span><span class="card-mark">JC</span></div>
+          <h3>Javier Carrasco</h3>
+          <p class="card-intro">Estudiante de Ingeniería Civil en Computación e Informática.</p>
+
+          <section class="card-section">
+            <h4>Herramientas</h4>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>Java</li>
+            </ul>
+          </section>
+
+          <section class="card-section">
+            <h4>Intereses</h4>
+            <p id="javier-extra" class="extra-copy oculto">Ingeniería de prompts y optimización de flujos con inteligencia artificial.</p>
+            <button id="javier-toggle" class="text-button" type="button" aria-expanded="false" aria-controls="javier-extra">Ver más <span aria-hidden="true">↗</span></button>
+          </section>
+          <button id="javier-destacar" class="outline-button" type="button">☆ Destacar perfil</button>
+          <p class="card-index">02 <span>/ 03</span></p>
+        </article>
+
+        <article class="resume-card resume-card--matias">
+          <div class="card-topline"><span>PERFIL 03</span><span class="card-mark">MO</span></div>
+          <h3>Matías Olivares</h3>
+          <p class="card-intro">Ingeniería Informática y Computación</p>
+
+          <section class="card-section">
+            <h4>Datos personales</h4>
+            <dl class="detail-list">
+              <div><dt>RUT</dt><dd>21.545.403-7</dd></div>
+              <div><dt>Correo</dt><dd><a href="mailto:nathanxx980@gmail.com">nathanxx980@gmail.com</a></dd></div>
+            </dl>
+          </section>
+
+          <section class="card-section">
+            <h4>Formación</h4>
+            <p>Universidad Central de Chile</p>
+          </section>
+
+          <section class="card-section">
+            <h4>Experiencia</h4>
+            <p>Práctica profesional en Minera Codelco</p>
+          </section>
+
+          <button id="btn-detalles-tuNombre" class="text-button" type="button" aria-expanded="false" aria-controls="info-extra-tuNombre">Ver más detalles <span aria-hidden="true">↗</span></button>
+          <p id="info-extra-tuNombre" class="extra-copy" hidden>¡Gracias por revisar mi sección del proyecto!</p>
+          <p class="card-index">03 <span>/ 03</span></p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>PORTAFOLIO / 2026</span>
+      <span>Tres perfiles · Un equipo</span>
+    </footer>
   </div>
-
-  <div class="caja_experiencia">
-    <h2 class="titulo_principal">Experiencias</h2>
-    <p class="mitad">Practica Minera Codelco</p>
-    <p class="mitad">Practica Empresa COLSAN LTDA</p>
-    <span class="etiqueta_esquina">Experiencia</span>
-  </div>
-
-</div>
-
-<div class="project-card" id="javier">
-  <h2 class="card-title">💻 Javier Carrasco</h2>
-  <p class="card-description">Estudiante de Ingeniería Civil en Computación e Informática.</p>
-  <ul class="card-tech-list">
-    <li>Python</li>
-    <li>JavaScript</li>
-    <li>Java</li>
-  </ul>
-  <button id="javier-toggle">Ver más</button>
-  <p id="javier-extra" class="oculto">Interesado en ingeniería de prompts y optimización de flujos con IA.</p>
-  <button id="javier-destacar">⭐ Destacar</button>
-  <span class="etiqueta_esquina">Proyecto</span>
-</div>
-
-  <div class="caja_datos">
-    <h1 class="titulo_principal">Curriculum Vitae</h1>
-    <p class="mitad">MatiasOlivares</p>
-    <p class="mitad">Rut: 21.545.403-7</p>
-    <p class="mitad">correo: nathanxx980@gmail.com</p>
-    <span class="etiqueta_esquina">Datos personales</span>
-    <button id="btn-detalles-tuNombre">Ver más detalles</button>
-    <p id="info-extra-tuNombre" style="display: none;">¡Gracias por revisar mi sección del proyecto!</p>
-  </div>
-</div>
 </body>
 </html>
