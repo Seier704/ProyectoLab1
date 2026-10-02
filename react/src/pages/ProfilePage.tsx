@@ -8,20 +8,34 @@ function ProfilePage() {
   const user = auth?.user
   const { username } = useParams<{ username: string }>()
   const [likes, setLikes] = useState<number>(0)
-  const loggedUsername = user?.username
+  const loggedUsername = user?.username.trim().toLocaleLowerCase('es')
+  const loggedName = user?.name.trim().toLocaleLowerCase('es')
+  const matchesUrl = Boolean(username && loggedUsername && username.trim().toLocaleLowerCase('es') === loggedUsername)
+  const ownerFromUsername = loggedUsername === 'fabian' || loggedUsername === 'fabian-silva'
+    ? 'fabian'
+    : loggedUsername === 'javier' || loggedUsername === 'javier-carrasco'
+      ? 'javier'
+      : null
+  const ownerFromName = loggedName === 'fabián silva'
+    ? 'fabian'
+    : loggedName === 'javier carrasco'
+      ? 'javier'
+      : null
+  const profileOwner = ownerFromUsername ?? ownerFromName
+  const ownsFabianProfile = matchesUrl && profileOwner === 'fabian'
+  const ownsJavierProfile = matchesUrl && profileOwner === 'javier'
 
   useEffect(() => {
-    if (!username || username !== loggedUsername) return
+    if (!username || !ownsFabianProfile) return
 
     window.localStorage.setItem(
-      `perfil:${username}:ultimaVisita`,
+      'perfil:fabian:ultimaVisita',
       new Date().toISOString(),
     )
-  }, [loggedUsername, username])
+  }, [ownsFabianProfile, username])
 
   if (!user) return null
 
-  const matchesUrl = username?.trim().toLowerCase() === user.username
   const initials = user.name
     .split(' ')
     .filter(Boolean)
@@ -70,7 +84,7 @@ function ProfilePage() {
           </div>
         </section>
       </div>
-      {matchesUrl && (
+      {ownsFabianProfile && (
         <article className="profile-panel member-card" aria-labelledby="fabian-card-title">
           <p className="eyebrow">03 / TARJETA PERSONAL</p>
           <h3 id="fabian-card-title">Fabián Silva</h3>
@@ -89,7 +103,7 @@ function ProfilePage() {
           </button>
         </article>
       )}
-      <JavierCard />
+      {ownsJavierProfile && <JavierCard />}
     </main>
   )
 }

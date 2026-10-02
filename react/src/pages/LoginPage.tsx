@@ -15,8 +15,9 @@ function LoginPage() {
     event.preventDefault()
     const cleanName = name.trim()
     const cleanUsername = username.trim().toLowerCase()
+    const ownProfilePath = `/perfil/${encodeURIComponent(cleanUsername)}`
     signIn(cleanName, email.trim(), cleanUsername)
-    navigate(returnTo ?? `/perfil/${encodeURIComponent(cleanUsername)}`, { replace: true })
+    navigate(returnTo === ownProfilePath ? returnTo : ownProfilePath, { replace: true })
   }
 
   return (
