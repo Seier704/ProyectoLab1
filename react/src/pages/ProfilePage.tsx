@@ -1,4 +1,5 @@
 import type { AuthUser } from '../AuthContext'
+import JavierCard from './JavierCard'
 
 interface ProfilePageProps {
   user: AuthUser
@@ -47,6 +48,7 @@ function ProfilePage({ user }: ProfilePageProps) {
           </div>
         </section>
       </div>
+      <JavierCard />
     </main>
   )
 }
