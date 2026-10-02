@@ -1,4 +1,8 @@
+import { useState } from 'react'
+
 function JavierCard() {
+  const [likes] = useState<number>(0)
+
   return (
     <article className="profile-panel member-card" aria-labelledby="javier-card-title">
       <p className="eyebrow">03 / TARJETA PERSONAL</p>
@@ -9,6 +13,7 @@ function JavierCard() {
         con perfiles, formación y experiencia en una misma página.
       </p>
       <p className="member-card-skills">Herramientas: Python, JavaScript y Java.</p>
+      <p className="member-card-likes">Me gusta: {likes}</p>
     </article>
   )
 }
