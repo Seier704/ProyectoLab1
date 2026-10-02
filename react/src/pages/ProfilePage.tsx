@@ -1,10 +1,14 @@
-import type { AuthUser } from '../AuthContext'
+import { useParams } from 'react-router-dom'
+import { useAuth } from '../useAuth'
+import JavierCard from './JavierCard'
 
-interface ProfilePageProps {
-  user: AuthUser
-}
+function ProfilePage() {
+  const { user } = useAuth()
+  const { usuario } = useParams<{ usuario: string }>()
 
-function ProfilePage({ user }: ProfilePageProps) {
+  if (!user) return null
+
+  const matchesUrl = usuario?.trim().toLocaleLowerCase('es') === user.name.trim().toLocaleLowerCase('es')
   const initials = user.name
     .split(' ')
     .filter(Boolean)
@@ -31,6 +35,12 @@ function ProfilePage({ user }: ProfilePageProps) {
         <span className="profile-status"><span /> Sesión iniciada</span>
       </section>
 
+      {!matchesUrl && (
+        <p className="profile-url-warning" role="alert">
+          El usuario de la URL no coincide con la sesión de {user.name}.
+        </p>
+      )}
+
       <div className="profile-columns">
         <section className="profile-panel" aria-labelledby="summary-title">
           <p className="eyebrow">01 / PRESENTACIÓN</p>
@@ -47,6 +57,7 @@ function ProfilePage({ user }: ProfilePageProps) {
           </div>
         </section>
       </div>
+      <JavierCard />
     </main>
   )
 }

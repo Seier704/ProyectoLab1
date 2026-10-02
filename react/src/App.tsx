@@ -22,7 +22,7 @@ function SiteHeader() {
         <Link to="/">Directorio</Link>
         {user ? (
           <>
-            <Link to="/perfil">Mi perfil</Link>
+            <Link to={`/perfil/${encodeURIComponent(user.name)}`}>Mi perfil</Link>
             <button className="nav-action" onClick={handleSignOut} type="button">Salir</button>
           </>
         ) : (
@@ -41,7 +41,11 @@ function ProtectedProfile() {
     return <Navigate replace state={{ from: location.pathname }} to="/login" />
   }
 
-  return <ProfilePage user={user} />
+  if (location.pathname === '/perfil') {
+    return <Navigate replace to={`/perfil/${encodeURIComponent(user.name)}`} />
+  }
+
+  return <ProfilePage />
 }
 
 function SiteFooter() {
@@ -61,6 +65,7 @@ function App() {
         <Route element={<LandingPage />} path="/" />
         <Route element={<LoginPage />} path="/login" />
         <Route element={<ProtectedProfile />} path="/perfil" />
+        <Route element={<ProtectedProfile />} path="/perfil/:usuario" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Routes>
       <SiteFooter />
