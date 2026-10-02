@@ -1,50 +1,143 @@
+:root {
+  --color-primary: #1b3a4b;
+  --color-accent: #f2a541;
+  --color-text: #222222;
+  --font-title: 'Poppins', sans-serif;
+  --font-body: system-ui, sans-serif;
+}
+
 .contenedor_curriculum {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2%;
-  background-color: #a8c8e8;
-  padding: 3%;
-  border-radius: 5%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-  max-width: 70%;
+  gap: 1rem;
+  width: min(90%, 56rem);
   margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #a8c8e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .caja_datos,
 .caja_experiencia {
-  grid-column: span 12;
   position: relative;
-  border-radius: 5%;
-  padding: 5% 3%;
-  margin-bottom: 3%;
+  grid-column: span 12;
+  margin-bottom: 0.5rem;
+  padding: 1.5rem 1rem 3rem;
+  border-radius: 1rem;
 }
 
 .caja_datos {
-  background-color: #dceaf7; /* celeste claro */
+  background-color: #dceaf7;
 }
 
 .caja_experiencia {
-  background-color: #fdf0d9; /* durazno/beige suave, distinto al azul */
+  background-color: #fdf0d9;
 }
 
 .etiqueta_esquina {
   position: absolute;
-  bottom: 5%;
-  right: 3%;
-  font-size: 90%;
-  font-style: italic;
+  right: 1rem;
+  bottom: 0.75rem;
   color: #4a6b8a;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
-
-#javier-extra {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+#javier.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(90%, 30rem);
+  margin: 1.5rem auto;
+  padding: 1.5rem 1.25rem 3rem;
+  border: 0.1rem solid var(--color-primary);
+  border-radius: 1.5rem;
+  background: #e8f0e5;
+  color: var(--color-text);
+  font-family: var(--font-body);
 }
-#javier-extra:not(.oculto) {
-  max-height: 100px;
-  opacity: 1;
+
+#javier .card-title {
+  color: var(--color-primary);
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#javier .card-description {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+#javier .card-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+#javier .card-tech-list li {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+#javier .etiqueta_esquina {
+  color: var(--color-primary);
+}
+
+#javier-destacar {
+  margin-top: 0.5rem;
+}
+
+#javier.project-card.destacado {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0.8rem rgba(242, 165, 65, 0.4);
+}
+
+body.modo-oscuro {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+#modo-oscuro {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+#boton-sorpresa {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.875rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: #4a90e2;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#mensaje-sorpresa:not(:empty) {
+  position: fixed;
+  top: 3.75rem;
+  left: 1rem;
+  z-index: 10;
+  max-width: 250px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .contenedor_curriculum {
+    padding: 1rem;
+  }
 }
