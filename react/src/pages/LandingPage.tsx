@@ -5,6 +5,7 @@ const profiles = [
     initials: 'FS',
     name: 'Fabián Silva',
     field: 'Experiencia en terreno',
+    href: '/equipo/fabian-silva',
     note: 'Prácticas en minería y soporte técnico.',
     tone: 'moss',
   },
@@ -63,12 +64,20 @@ function LandingPage() {
             <article className={`profile-preview profile-preview--${profile.tone}`} key={profile.initials}>
               <div className="preview-topline">
                 <span>PERFIL / 0{index + 1}</span>
-                <span aria-hidden="true">↗</span>
+                {profile.href ? (
+                  <Link aria-label={`Ver perfil de ${profile.name}`} to={profile.href}>↗</Link>
+                ) : (
+                  <span aria-hidden="true">↗</span>
+                )}
               </div>
               <div className="preview-monogram" aria-hidden="true">{profile.initials}</div>
               <div className="preview-copy">
                 <p className="preview-field">{profile.field}</p>
-                <h3>{profile.name}</h3>
+                  <h3>
+                    {profile.href ? (
+                      <Link className="profile-name-link" to={profile.href}>{profile.name}</Link>
+                    ) : profile.name}
+                  </h3>
                 <p>{profile.note}</p>
               </div>
               <span className="preview-index">0{index + 1}</span>
