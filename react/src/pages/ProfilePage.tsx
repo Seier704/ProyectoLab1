@@ -4,11 +4,11 @@ import JavierCard from './JavierCard'
 
 function ProfilePage() {
   const { user } = useAuth()
-  const { usuario } = useParams<{ usuario: string }>()
+  const { username } = useParams<{ username: string }>()
 
   if (!user) return null
 
-  const matchesUrl = usuario?.trim().toLocaleLowerCase('es') === user.name.trim().toLocaleLowerCase('es')
+  const matchesUrl = username?.trim().toLowerCase() === user.username
   const initials = user.name
     .split(' ')
     .filter(Boolean)
