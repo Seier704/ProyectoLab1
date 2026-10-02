@@ -8,14 +8,6 @@ const botonJavier = document.querySelector('#javier-toggle');
 const extraJavier = document.querySelector('#javier-extra');
 
 botonJavier.addEventListener('click', () => {
-  console.log('clic detectado');
-});
-
-botonJavier.addEventListener('click', () => {
-  extraJavier.classList.toggle('oculto');
-});
-
-botonJavier.addEventListener('click', () => {
   extraJavier.classList.toggle('oculto');
   const abierto = !extraJavier.classList.contains('oculto');
   botonJavier.textContent = abierto ? '🔼 Ver menos' : '🔽 Ver más';
