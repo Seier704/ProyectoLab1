@@ -1,7 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useAuth } from '../useAuth'
 
 function JavierCard() {
+  const { user } = useAuth()
   const [likes, setLikes] = useState<number>(0)
+
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem(`perfil:${user.name}:ultimaVisita`, new Date().toISOString())
+    }
+  }, [user])
 
   return (
     <article className="profile-panel member-card" aria-labelledby="javier-card-title">
