@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AuthContext } from '../AuthContext'
 import JavierCard from './JavierCard'
@@ -8,6 +8,16 @@ function ProfilePage() {
   const user = auth?.user
   const { username } = useParams<{ username: string }>()
   const [likes, setLikes] = useState<number>(0)
+  const loggedUsername = user?.username
+
+  useEffect(() => {
+    if (!username || username !== loggedUsername) return
+
+    window.localStorage.setItem(
+      `perfil:${username}:ultimaVisita`,
+      new Date().toISOString(),
+    )
+  }, [loggedUsername, username])
 
   if (!user) return null
 
