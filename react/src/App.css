@@ -782,6 +782,10 @@ input:focus-visible {
   margin-bottom: 0;
 }
 
+.member-card-button {
+  margin-top: 0.25rem;
+}
+
 .placeholder-copy,
 .empty-entry {
   color: var(--muted);

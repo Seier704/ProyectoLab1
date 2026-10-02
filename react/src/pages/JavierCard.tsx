@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 function JavierCard() {
-  const [likes] = useState<number>(0)
+  const [likes, setLikes] = useState<number>(0)
 
   return (
     <article className="profile-panel member-card" aria-labelledby="javier-card-title">
@@ -14,6 +14,9 @@ function JavierCard() {
       </p>
       <p className="member-card-skills">Herramientas: Python, JavaScript y Java.</p>
       <p className="member-card-likes">Me gusta: {likes}</p>
+      <button className="button button-quiet member-card-button" onClick={() => setLikes((current) => current + 1)} type="button">
+        Dar me gusta
+      </button>
     </article>
   )
 }
