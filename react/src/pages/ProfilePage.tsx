@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AuthContext } from '../AuthContext'
 import JavierCard from './JavierCard'
@@ -7,6 +7,7 @@ function ProfilePage() {
   const auth = useContext(AuthContext)
   const user = auth?.user
   const { username } = useParams<{ username: string }>()
+  const [likes, setLikes] = useState<number>(0)
 
   if (!user) return null
 
@@ -66,6 +67,16 @@ function ProfilePage() {
           <p>En el Laboratorio 1 trabajé en el portafolio colaborativo de currículums del equipo.</p>
           <p className="member-card-skills">Aporte: estructura del perfil, presentación de experiencia y datos personales.</p>
           <p className="member-card-skills">Tecnologías: React, TypeScript y CSS.</p>
+          <p className="member-card-likes">Me gusta: {likes}</p>
+          <button
+            aria-label={`Me gusta: ${likes}`}
+            aria-pressed={likes > 0}
+            className="button button-quiet member-card-button"
+            onClick={() => setLikes((currentLikes) => currentLikes + 1)}
+            type="button"
+          >
+            Dar me gusta
+          </button>
         </article>
       )}
       <JavierCard />
